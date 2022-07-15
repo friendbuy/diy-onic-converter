@@ -41,6 +41,25 @@ Edit _README.md_ so that it describes your function. State what it does, how it 
 
 Take particular note of edge, corner, or unhandled cases in your function—considering the time frame, it’s very likely that your program will have these! We feel it’s just as important for a software developer to know the limitations of their code as well as its capabilities. This shows that you understand the programming need deeply and have a sense of the huge number of variations that a web page can have.
 
+## Example
+Visit a website that has paragraphs to convert and open its developer tools console:
+
+![Web site before](./images/before.png)
+
+Copy-paste your code to the console:
+
+![Web site during](./images/during.png)
+
+Invoke your function with a selector containing the paragraphs to convert:
+
+![Web site after](./images/after.png)
+
+Example intentionally shows some limitations:
+* Boldface text is not preserved
+* Links are lost
+
+These would be documented in _README.md_.
+
 ## Criteria
 
 ### Bionic
@@ -55,3 +74,5 @@ Take particular note of edge, corner, or unhandled cases in your function—cons
 ### Ultra Bionic Max
 * The function is very robust and handles a wide variety of HTML content
 * The function includes multiple capabilities that go beyond the basic bionic reading conversion described here
+* Big flex: an in-page user interface that allows the user to convert/toggle the page interactively
+
