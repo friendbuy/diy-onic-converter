@@ -44,7 +44,28 @@ Edit _README.md_ so that it describes your function. State what it does, how it 
 
 Take particular note of edge, corner, or unhandled cases in your function—considering the time frame, it’s very likely that your program will have these! We feel it’s just as important for a software developer to know the limitations of their code as well as its capabilities. This shows that you understand the programming need deeply and have a sense of the huge number of variations that a web page can have.
 
-## Example
+## Example for Included Static Site
+Start the static web server via `yarn start` or `npm start`. Upon successful execution, the static website should be available on http://localhost:8080
+
+![Static site before](./images/before-static.png)
+
+Execute your code from the console:
+
+_(about to call…)_
+
+![Static site about to call](./images/during-static.png)
+
+_(after the call)_
+
+![Static site after call](./images/after-static.png)
+
+The result shown here intentionally shows some limitations:
+* Boldface text is not preserved
+* Links are lost
+
+These would be documented in _README.md_.
+
+## Example for Real-World Websites (optional)
 Visit a website that has paragraphs to convert and open its developer tools console:
 
 ![Web site before](./images/before.png)
@@ -56,12 +77,6 @@ Copy-paste your code to the console:
 Invoke your function with a selector containing the paragraphs to convert:
 
 ![Web site after](./images/after.png)
-
-Example intentionally shows some limitations:
-* Boldface text is not preserved
-* Links are lost
-
-These would be documented in _README.md_.
 
 ## Criteria
 
