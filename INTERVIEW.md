@@ -29,16 +29,15 @@ The following challenge seeks to highlight your knowledge of the following:
 Visit https://bionic-reading.com and read about what it is. They have a simple online converter that shows you how they transform text into this “bionic” form. Please note, we are asking you to do this solely as an exercise for you to demonstrate your skills, and _not_ to produce a competitor for their core idea and company. We are just using it as a basis for a front-end coding challenge.
 
 ### 2. Implement your own converter function
-Write a function that will accept a CSS selector string as an argument. The function should then convert the content of every `p` element within the elements matched by that selector so that every word is formatted in a style that is similar to bionic reading.
+Write a function that will accept a CSS selector string as an argument—this has been stubbed out in _/public/diy-onic-converter.js_. The function should then convert the content of every `p` element within the elements matched by that selector so that every word is formatted in a style that is similar to bionic reading.
 
-* The function should be written so that its code can be copy-pasted into a web browser’s developer tools console
-* Once defined in the console, the function should then be called with a selector from the current web page
+* The function should be written so that it can be called successfully from a web browser’s developer tools console in the included static website
 * When it finishes execution, the `p` elements within the selected element in the web page should now be formatted similarly to bionic reading
 * The function must process the HTML content _locally_—no calling of APIs that do the conversion remotely
 
 Note that we aren’t giving an exact definition of how bionic reading format is determined. A reasonable facsimile will do, even if it does not match the official [bionic reading conversion](https://api.bionic-reading.com/convert/) exactly. Still, the closer the better!
 
-If you are able to work quickly enough, feel free to give your code additional features. For example, you code might be able to install an _in-page_ user interface for toggling between original and bionic reading format. Or your function might take an options argument which can customize the way formatting is performed.
+If you are able to work quickly enough, feel free to give your code additional features. For example, the function can also be written so that its code can be copy-pasted into a web browser’s developer tools console on _any_ website and called successfully from there. Or perhaps your code might be able to install an _in-page_ user interface for toggling between original and bionic reading format. Or your function might take an `options` argument which can customize the way formatting is performed. Anything that showcases your skills or knowledge is fair game.
 
 ### 3. Document your work
 Edit _README.md_ so that it describes your function. State what it does, how it does it, and provide instructions on how to use it—the more turnkey, the better!
@@ -67,9 +66,13 @@ These would be documented in _README.md_.
 ## Criteria
 
 ### Bionic
-* The function works as specified (copy-paste into console, invoke function with selector, see results on the current website)
+* The function works as specified (invoke function with selector on provided static website)
 * The converted HTML and styles sufficiently resemble the conversion performed by https://bionic-reading.com
 * _README.md_ provides accurate instructions on how to execute the function
+
+### Bionic Plus
+* The function works when dynamically added to real-world websites (copy-paste into console, invoke function with selector, see results on the current website)
+* _README.md_ states that this is possible and provides accurate instructions for doing so
 
 ### Super Bionic
 * _README.md_ describes the limitations of this implementation (provide sample websites that demonstrate these limitations, if possible)
