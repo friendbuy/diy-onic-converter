@@ -3,20 +3,23 @@
 _Read this whole document before starting the exercise._
 
 ## Introduction
+
 The following challenge seeks to highlight your knowledge of the following:
-* JavaScript (particularly ES6 or later)
-* HTML/CSS
-* DOM manipulation
-* CSS selectors
-* String processing
-* Array iteration
-* Identification of edge and corner cases
+
+- JavaScript (particularly ES6 or later)
+- HTML/CSS
+- DOM manipulation
+- CSS selectors
+- String processing
+- Array iteration
+- Identification of edge and corner cases
 
 ## Setup
+
 1. Fork this repo https://github.com/friendbuy/diy-onic-converter
 2. Clone the repository locally on your computer
 3. Install dependencies by invoking `yarn` or `npm install`
-4. Start the local web server via `yarn start` or `npm start`
+4. Start the local web server at via `yarn start` or `npm start` (`http://localhost:8080/`)
 5. Implement the requested function in _/public/diy-onic-converter.js_ (see below)
 6. Test your function by calling it from the console of the test web page (see below)
 7. Commit as frequently as needed and push your code accordingly
@@ -26,75 +29,50 @@ The following challenge seeks to highlight your knowledge of the following:
 ## Tasks
 
 ### 1. Learn about “bionic reading”
-Visit https://bionic-reading.com and read about what it is. They have a simple online converter that shows you how they transform text into this “bionic” form. Please note, we are asking you to do this solely as an exercise for you to demonstrate your skills, and _not_ to produce a competitor for their core idea and company. We are just using it as a basis for a front-end coding challenge.
+
+Visit https://bionic-reading.com and read about what it is.[^1]
 
 ### 2. Implement your own converter function
-Write a function that will accept a CSS selector string as an argument—this has been stubbed out in _/public/diy-onic-converter.js_. The function should then convert the content of every `p` element within the elements matched by that selector so that every word is formatted in a style that is similar to bionic reading.
 
-* The function should be written so that it can be called successfully from a web browser’s developer tools console in the included static website
-* When it finishes execution, the `p` elements within the selected element in the web page should now be formatted similarly to bionic reading
-* The function must process the HTML content _locally_—no calling of APIs that do the conversion remotely
+Write a function that will accept a CSS selector string as an argument—this has been stubbed out in `/public/diy-onic-converter.js`. The function should then convert the content of every `p` element within the elements matched by that selector so that every word is formatted in a style that is similar to bionic reading.
 
-Note that we aren’t giving an exact definition of how bionic reading format is determined. A reasonable facsimile will do, even if it does not match the official [bionic reading conversion](https://api.bionic-reading.com/convert/) exactly. Still, the closer the better!
+- With the server running (see [Setup](#setup)), test your solution using the provided web page at `http://localhost:8080/`
+- The function should be written so that it can be called successfully from a web browser’s developer tools console
+- When it finishes execution, the `p` elements within the selected element in the web page should now be formatted similarly to bionic reading
+- The function must process the HTML content _locally_—no calling of APIs that do the conversion remotely
 
-If you are able to work quickly enough, feel free to give your code additional features. For example, the function can also be written so that its code can be copy-pasted into a web browser’s developer tools console on _any_ website and called successfully from there. Or perhaps your code might be able to install an _in-page_ user interface for toggling between original and bionic reading format. Or your function might take an `options` argument which can customize the way formatting is performed. Anything that showcases your skills or knowledge is fair game.
+> Note that we aren’t giving an exact definition of how bionic reading format is determined. A reasonable facsimile will do, even if it does not match the official [bionic reading conversion](https://api.bionic-reading.com/convert/) exactly. See additional [Criteria](#criteria) below.
 
 ### 3. Document your work
+
 Edit _README.md_ so that it describes your function. State what it does, how it does it, and provide instructions on how to use it—the more turnkey, the better!
-
-Take particular note of edge, corner, or unhandled cases in your function—considering the time frame, it’s very likely that your program will have these! We feel it’s just as important for a software developer to know the limitations of their code as well as its capabilities. This shows that you understand the programming need deeply and have a sense of the huge number of variations that a web page can have.
-
-## Example for Included Static Site
-Start the static web server via `yarn start` or `npm start`. Upon successful execution, the static website should be available on http://localhost:8080
-
-![Static site before](./images/before-static.png)
-
-Execute your code from the console:
-
-_(about to call…)_
-
-![Static site about to call](./images/during-static.png)
-
-_(after the call)_
-
-![Static site after call](./images/after-static.png)
-
-The result shown here intentionally shows some limitations:
-* Boldface text is not preserved
-* Links are lost
-
-These would be documented in _README.md_.
-
-## Example for Real-World Websites (optional)
-Visit a website that has paragraphs to convert and open its developer tools console:
-
-![Web site before](./images/before.png)
-
-Copy-paste your code to the console:
-
-![Web site during](./images/during.png)
-
-Invoke your function with a selector containing the paragraphs to convert:
-
-![Web site after](./images/after.png)
 
 ## Criteria
 
-### Bionic
-* The function works as specified (invoke function with selector on provided static website)
-* The converted HTML and styles sufficiently resemble the conversion performed by https://bionic-reading.com
-* _README.md_ provides accurate instructions on how to execute the function
+### Bionic (Basic Requirements)
 
-### Bionic Plus
-* The function works when dynamically added to real-world websites (copy-paste into console, invoke function with selector, see results on the current website)
-* _README.md_ states that this is possible and provides accurate instructions for doing so
+- Provide Github link to the forked repo
+- The function works as specified
+  - Invoke function with selector on provided static website
+  - Transform all text within `p` tags
+- Only needs to support a static prefix length (ie. the number of letters that are bolded)
+- The converted HTML and styles sufficiently resemble the conversion performed by https://bionic-reading.com
+- _README.md_ provides accurate instructions on how to execute the function
 
-### Super Bionic
-* _README.md_ describes the limitations of this implementation (provide sample websites that demonstrate these limitations, if possible)
-* The function includes one capability that goes beyond the basic bionic reading conversion described here
+### Bionic Plus (Above and Beyond)
 
-### Ultra Bionic Max
-* The function is very robust and handles a wide variety of HTML content
-* The function includes multiple capabilities that go beyond the basic bionic reading conversion described here
-* Big flex: an in-page user interface that allows the user to convert/toggle the page interactively
+- The function works when dynamically added to real-world websites (copy-paste into console, invoke function with selector, see results on the current website)[^2]
+  - _README.md_ states that this is possible and provides accurate instructions for doing so in addition to a list of sites it was tested on
+- The function includes one or more additional capabilities that goes beyond the basic bionic reading conversion. Including, but not limited to:
+  - Handles inline HTML tags (`<span>`, `<a>`, `<em>`, etc) while maintaining block level tags
+  - Preserves links and images
+  - Apply to entire page instead of only `p` tags
+  - Allows options to be passed to the function to customize the way formatting is performed
+- _README.md_ describes the limitations of this implementation (provide sample websites that demonstrate these limitations, if possible)
+- Big flex: an in-page user interface that allows the user to convert/toggle the page interactively
 
+---
+
+[^1]: They have a simple online converter that shows you how they transform text into this “bionic” form. Please note, we are asking you to do this solely as an exercise for you to demonstrate your skills, and _not_ to produce a competitor for their core idea and company. We are just using it as a basis for a front-end coding challenge.
+
+[^2]: Please do not attempt to make a browser extension. This is not the purpose of the challenge and we will not install the extension on our browsers to test.
