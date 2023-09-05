@@ -1,15 +1,19 @@
-/**
- * Implement your converter function here.
- */
 const diyOnicConverter = (textContentContainerSelector) => {
   const container = document.querySelector(textContentContainerSelector);
   console.log('Performing bionic reading conversion on:', container);
 
   processContainer(container);
-
-  /* Etc. etc. etc. your code etc. */
 };
 
+/**
+ * Create a DIY-onic element with static prefix length. The text parameter may not contains space.
+ * 
+ * @param {string} text
+ * @returns HTMLSpanElement
+ * @example
+ *  createDIYOnicElement('TestAlphaBet')
+ *  => <span class="diyonic"><b>Tes</b>tAlphaBet</span>
+ */
 const PREFIX_LENGTH = 3;
 
 const createDIYOnicElement = (text) => {
@@ -27,6 +31,11 @@ const createDIYOnicElement = (text) => {
   return element;
 };
 
+/**
+ * Process the container by selecting all paragraphs and applying a createDIYOnicElement to each paragraph.
+ *
+ * @param {HTMLElement} container - The container element to process.
+ */
 const processTag = (tag) => {
   const words = tag.textContent.split(' ');
 
@@ -36,6 +45,11 @@ const processTag = (tag) => {
   });
 };
 
+/**
+ * Process the given container by selecting all paragraphs and process paragraphs one by one.
+ *
+ * @param {HTMLElement} container - The container element to process.
+ */
 const processContainer = (container) => {
   const paragraphs = container.querySelectorAll('p');
 
