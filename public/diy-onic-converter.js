@@ -22,7 +22,7 @@ const createDIYOnicElement = (text) => {
   const element = document.createElement('span');
   element.className = 'diyonic';
   element.appendChild(emphasisElement);
-  element.append(normalText);
+  element.append(normalText + ' ');
 
   return element;
 };
@@ -33,7 +33,7 @@ const processTag = (tag) => {
   tag.innerHTML = '';
   words.forEach((word) => {
     tag.appendChild(createDIYOnicElement(word));
-  })
+  });
 };
 
 const processContainer = (container) => {
