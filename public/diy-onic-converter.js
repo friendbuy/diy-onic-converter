@@ -3,7 +3,9 @@
  */
 const diyOnicConverter = (textContentContainerSelector) => {
   const container = document.querySelector(textContentContainerSelector);
-  console.log("Performing bionic reading conversion on:", container);
+  console.log('Performing bionic reading conversion on:', container);
+
+  processContainer(container);
 
   /* Etc. etc. etc. your code etc. */
 };
@@ -23,6 +25,21 @@ const createDIYOnicElement = (text) => {
   element.append(normalText);
 
   return element;
+};
+
+const processTag = (tag) => {
+  const words = tag.textContent.split(' ');
+
+  tag.innerHTML = '';
+  words.forEach((word) => {
+    tag.appendChild(createDIYOnicElement(word));
+  })
+};
+
+const processContainer = (container) => {
+  const paragraphs = container.querySelectorAll('p');
+
+  paragraphs.forEach(processTag);
 };
 
 // Allow global access so that this can be executed from the console.
